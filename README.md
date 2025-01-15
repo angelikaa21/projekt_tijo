@@ -1,4 +1,72 @@
-# Manual Test Cases
+# Testowanie i Jakość Oprogramowania
+
+## Autor
+Angelika Król
+
+## Temat projektu
+Baza filmowa
+
+## Opis projektu
+Projekt to aplikacja webowa umożliwiająca użytkownikom:
+- Przeglądanie szczegółowych informacji o filmach.
+- Ocenianie filmów, tworzenie list ulubionych filmów i zapisywanie do obejrzenia.
+
+Aplikacja wykorzystuje API TMDB do pobierania danych o filmach oraz MongoDB do przechowywania danych użytkowników.
+
+## Uruchamianie projektu
+1. Sklonuj repozytorium:
+   ```bash
+   git clone https://github.com/angelikaa21/projekt_tijo.git
+   ```
+2. Przejdź do katalogu projektu i zainstaluj zależności:
+   ```bash
+   cd client
+   npm install
+   ```
+3. Zainstaluj zależności backendu:
+   ```bash
+   cd server
+   npm install
+   ```
+4. Uruchom backend:
+   ```bash
+   cd server
+   npm run dev
+   ```
+5. Uruchom frontend:
+   ```bash
+   cd client
+   npm start
+   ```
+   
+## Testy
+### Testy jednostkowe i integracyjne
+Pliki testowe znajdują się na GitHubie w poniższych lokalizacjach:
+
+- [LoginRegisterTest.test.js](client/src/tests/LoginRegisterTest.test.js): Testy komponentów logowania i rejestracji.
+- [tmdbApi.test.js](client/src/tests/tmdbApi.test.js): Testy integracyjne dla funkcji API TMDB.
+
+#### Przykładowe uruchomienie testów:
+```bash
+npm test
+```
+
+### Zakres testów:
+1. **LoginRegisterTest.test.js**
+   - Testowanie poprawnego renderowania formularzy logowania i rejestracji.
+   - Walidacja danych wejściowych.
+   - Sprawdzenie wywołań funkcji API `registerUser` i `loginUser`.
+
+2. **tmdbApi.test.js**
+   - Pobieranie listy filmów trendujących.
+   - Pobieranie szczegółowych informacji o filmie.
+   - Obsługa błędów API.
+
+## Dokumentacja API
+https://app.swaggerhub.com/apis-docs/AngelikaKrol/movie-app_api/1.0.0
+
+## Przypadki testowe dla testera manualnego
+### Manual Test Cases
 
 | ID    | Opis testu                                 | Kroki do wykonania                                                                 | Oczekiwany rezultat                           |
 |-------|--------------------------------------------|------------------------------------------------------------------------------------|-----------------------------------------------|
@@ -32,5 +100,11 @@
 |       |                                            | 3. Wybierz kryteria filtrowania.                                                   |                                               |
 | TC10  | Przejście do szczegółów filmu              | 1. Wybierz dowolny film z listy.                                                   | Wyświetlają się szczegóły filmu.              |
 |       |                                            | 2. Kliknij w obrazek lub przycisk "Więcej szczegółów".                             |                                               |
+
+
+## Technologie użyte w projekcie
+- **Frontend:** React.js, React Slick
+- **Backend:** Node.js, Express.js
+- **Baza danych:** MongoDB
 
 
